@@ -1,0 +1,139 @@
+html,body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: #110a1a;
+  display: grid;
+ }
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #211025;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #707070;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5c5c5c;
+}
+
+
+.header {
+    background: #4b337d;
+    position: sticky;
+    top: 0;
+    border-style: solid none none none;
+    border-color: #9f7fcc;
+    border-width: 2px;
+    line-height: 1em;
+    min-height: 55px;
+    color: #e6def2;
+    display: inline-block;
+    width: 100%;
+}
+
+.linkholder {
+    background: #4b337d;
+    top: 58.81px;
+    border-style: solid none none none;
+    border-color: #cbbfda;
+    border-width: 1px;
+    line-height: 1em;
+    min-height: 55px;
+    color: #e6def2;
+    display: none;
+    width: 100%;
+    transition: 0.2s;
+}
+
+
+.tinhead {
+    display: inline-block;
+    border-color: #9f7fcc;
+    padding-right: 6px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+}
+
+.header a {
+    background: #4b337d;
+    padding: 22.5px 20px;
+    text-decoration: none;
+    color: white;
+    border-width: px;
+    border-color: #9f7fcc;
+    display: inline-block;
+}
+
+.header a:hover {
+   text-decoration: underline;
+  background: #7a59a8;
+}
+
+#menubutton {
+    display: none;
+}
+
+#mbimg {
+  display: none;
+}
+
+
+.background {
+    transition: 0.2s;
+    background: linear-gradient(to bottom right, #110a1a 0%, #000000 100%);
+    margin: -0.3% 0%;
+    overflow-y: auto;
+    color: #e6def2;
+}
+
+
+.content {
+    text-align: center;
+    background: #2a2531;
+    margin: 2% auto;
+    font-size: 32px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #e6def2;
+    width: 70%;
+    min-height: 900px;
+    border-radius: 10px;
+}
+
+.footer {
+    text-align: center;
+    background: #2a2531;
+    margin: 3% auto;
+    font-size: 32px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #e6def2;
+    width: 90%;
+    border-radius: 20px;
+}
+
+#btn {
+    background: #5f4683;
+    padding: 20px 32px;
+    border: none;
+    text-align: center;
+    color: #e6def2;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+
+.content p {
+    margin: 3% 13%;
+    width: 70%;
+}
