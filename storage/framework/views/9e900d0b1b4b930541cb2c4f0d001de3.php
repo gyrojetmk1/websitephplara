@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="/css/basestyle.css">
     <link rel="stylesheet" href="/css/popup.css">
+    <?php echo $__env->yieldContent("optionalcss"); ?>
 
     <title>Home</title>
 
@@ -16,8 +17,10 @@
 
 
 <body>
+    <?php echo $__env->yieldContent("extrahtml"); ?>
 
     <div class="header">
+        
 
         <button id="menubutton" class=""><img id="mbimg" onclick="menu()" src="/images/hamburger.png"></button>
 
@@ -27,6 +30,19 @@
 
         <a href="/" style="margin-top: 0px;">Home</a><a href="/tests">Tests</a>
 
+        <?php if(auth()->guard()->check()): ?>
+            
+            <a href="/logout">Logout</a>
+            <p id="dusr"><?php echo e(auth()->user()->username); ?></p>
+            <?php if(auth()->user()->admin): ?>
+                <a href="/admin/upload" onclick="menu()">Upload</a>
+                <a href="/admin/delete" onclick="menu()">Delete</a>
+            <?php endif; ?>
+        <?php else: ?>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        <?php endif; ?>
+
     </div>
 
     <div class="linkholder closed" id="linkholder">
@@ -34,6 +50,17 @@
         <div class="links">
             <a href="/" onclick="menu()" style="margin-top: 0px;">Home</a>
             <a href="/tests" onclick="menu()">Tests</a>
+            <?php if(auth()->guard()->check()): ?>
+                <?php if(auth()->user()->admin): ?>
+                    <a href="/admin/upload" onclick="menu()">Upload</a>
+                    <a href="/admin/delete" onclick="menu()">Delete</a>
+                <?php endif; ?>
+                <a href="/logout" onclick="menu()">Logout</a>
+                <p id="dmusr"><?php echo e(auth()->user()->username); ?></p>
+            <?php else: ?>
+                <a href="/login" onclick="menu()">Login</a>
+                <a href="/register" onclick="menu()">Register</a>
+            <?php endif; ?>
         </div>
 
     </div>
