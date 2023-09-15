@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="/css/basestyle.css">
     <link rel="stylesheet" href="/css/popup.css">
+    @yield("optionalcss")
 
     <title>Home</title>
 
@@ -16,8 +17,10 @@
 
 
 <body>
+    @yield("extrahtml")
 
     <div class="header">
+        
 
         <button id="menubutton" class=""><img id="mbimg" onclick="menu()" src="/images/hamburger.png"></button>
 
@@ -27,6 +30,19 @@
 
         <a href="/" style="margin-top: 0px;">Home</a><a href="/tests">Tests</a>
 
+        @auth
+            
+            <a href="/logout">Logout</a>
+            <p id="dusr">{{auth()->user()->username}}</p>
+            @if (auth()->user()->admin)
+                <a href="/admin/upload" onclick="menu()">Upload</a>
+                <a href="/admin/delete" onclick="menu()">Delete</a>
+            @endif
+        @else
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        @endauth
+
     </div>
 
     <div class="linkholder closed" id="linkholder">
@@ -34,6 +50,17 @@
         <div class="links">
             <a href="/" onclick="menu()" style="margin-top: 0px;">Home</a>
             <a href="/tests" onclick="menu()">Tests</a>
+            @auth
+                @if (auth()->user()->admin)
+                    <a href="/admin/upload" onclick="menu()">Upload</a>
+                    <a href="/admin/delete" onclick="menu()">Delete</a>
+                @endif
+                <a href="/logout" onclick="menu()">Logout</a>
+                <p id="dmusr">{{auth()->user()->username}}</p>
+            @else
+                <a href="/login" onclick="menu()">Login</a>
+                <a href="/register" onclick="menu()">Register</a>
+            @endauth
         </div>
 
     </div>

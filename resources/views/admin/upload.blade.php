@@ -1,0 +1,52 @@
+@extends('layout')
+
+@section('optionalcss')
+    <link rel="stylesheet" href="/css/uploadstyle.css">
+@endsection
+
+@section('extrahtml')
+    @if (session()->has('info'))
+
+        @section("modalcontent")
+            <p>{{session()->get('info')}}</p>
+        @endsection
+
+        <body onload="showmodal()">
+    @endif
+
+    @if ($errors->any())
+        @section("modalcontent")
+
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+
+        @endsection
+        
+        <body onload="showmodal()">
+    @endif
+
+@endsection
+
+@section('content') {{-- Todo: make the code pretty and compact this down --}}
+<form action="/admin/upload" method="POST">
+    @csrf
+    <div class="container">
+      <h2>Upload post</h2>
+      <hr>
+
+      <label for="contentup"><b>Content</b></label>
+      <textarea type="text" placeholder="Enter main content here" name="content" id="contentup" required></textarea>
+  
+      <label for="footerup"><b>Footer</b></label>
+      <textarea type="text" placeholder="Enter footer here" name="footer" id="footerup"></textarea>
+      <hr>
+
+      <button type="submit" class="uploadbtn"><b>Upload</b></button>
+    </div>
+  </form>
+@endsection
+
+@section("modaltitle")
+    <h2 id="mht">Info</h2>
+@endsection 

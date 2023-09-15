@@ -52,7 +52,7 @@ var btn = document.getElementById("btn");
 
 var span = document.getElementsByClassName("closem")[0];
 
-btn.onclick = function() {
+function showmodal() {
   modal.style.display = "block";
 }
 

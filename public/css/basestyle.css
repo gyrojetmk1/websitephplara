@@ -41,6 +41,11 @@ html,body {
     width: 100%;
 }
 
+#dusr {
+  text-align: right;
+  display: inline;
+}
+
 .linkholder {
     background: #4b337d;
     top: 58.81px;

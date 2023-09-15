@@ -1,4 +1,15 @@
 <?php return array (
+  'itsgoingd/clockwork' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Clockwork\\Support\\Laravel\\ClockworkServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Clockwork' => 'Clockwork\\Support\\Laravel\\Facade',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -18,6 +29,17 @@
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    ),
+  ),
+  'livewire/livewire' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Livewire\\LivewireServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Livewire' => 'Livewire\\Livewire',
     ),
   ),
   'nesbot/carbon' => 
