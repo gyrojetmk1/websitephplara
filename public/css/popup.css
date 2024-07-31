@@ -1,15 +1,19 @@
 .modal {
+    transition: 0.2s;
     position: fixed;
     z-index: 20;
     background-color: #1e1e1e59;
     height: 100%;
     width: 100%;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.1s linear;
 }
 
 .modalcon {
     padding: 2px 16px;
     background: #bfa0ff;
+    transition: 0.1s;
     border-radius: 0px 0px 10px 10px;
     color: white;
     font-size: 20px;
@@ -17,6 +21,7 @@
 
 .closem {
     float: right;
+    transition: 0.1s;
     font-size: 23px;
 }
 
@@ -24,12 +29,14 @@
   padding: 2px 16px;
   background-color: #8162c1;
   color: white;
+  transition: 0.1s;
   border-radius: 10px 10px 0px 0px;
   height: fit-content;
 }
 
 
 .modalcontainer {
+    transition: 0.1s;
     width: fit-content;
     margin: 10% auto auto auto;
     /* display: block; */

@@ -1,0 +1,126 @@
+
+.comments {
+  background-color: #2a2531;
+  padding-bottom: 0.01px;
+}
+
+.comments h1 {
+  text-align: center;
+  padding-top: 15px;
+}
+
+textarea[type=text] {
+  width: 30%;
+  height: 20%;
+  resize: none;
+  padding: 15px;
+  margin-left: 20px;
+  display: block;
+  font-size:x-large;
+  border: none;
+  background: #110a1a;
+  transition: .2s ease;
+  color: #e6def2;
+  border-radius: 7px;
+}
+
+textarea[type=text]:focus{
+  background-color: #2f1c48;
+  outline: none;
+}
+
+.postcmtbtn {
+  background-color: #5f4683;
+  color: white;
+  padding: 7px 10px;
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  margin-top: 5px;
+  font-size: larger;
+  opacity: 0.9;
+  border-radius: 8px;
+  transition: 0.1s;
+}
+
+.postcmtbtn:hover {
+  background: #7a59a8;
+}
+
+#sillyh2 {
+  margin-left: 20px;
+}
+
+.comment {
+  background-color: #5f4683;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: fit-content;
+  max-width: 70%;
+  margin-left: 20px;
+  padding: 5px;
+  height: fit-content;
+  overflow-wrap: break-word;
+  padding-top: 1px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+}
+
+hr {
+  width: 98%;
+}
+
+.actions {
+  display: flex;
+  height: 30px;
+  width: fit-content;
+}
+
+.comment h2 {
+  margin-top: 10px;
+  font-size: medium;
+  width: fit-content;
+  text-align: right;
+}
+
+#delete {
+  text-decoration: underline;
+  text-decoration-color: #5f4683;
+  transition: 0.2s;
+  color: #e6def2;
+  margin-top: 10px;
+  background: none;
+  border: none;
+  font-size: 1em;
+  display: inline-block;
+}
+
+#delete:hover {
+  text-decoration-color: #e6def2;
+}
+
+@media (max-width: 699px) {
+  textarea[type=text] {
+    width: 90%;
+    margin: auto;
+  }
+
+  .postcmtbtn {
+    margin: auto;
+    margin-top: 8px;
+    width: 40%;
+    display: block;
+  }
+
+  hr {
+    width: 93%;
+  }
+
+  #sillyh2 {
+    margin: auto;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+}

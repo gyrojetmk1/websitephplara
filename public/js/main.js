@@ -53,16 +53,20 @@ var btn = document.getElementById("btn");
 var span = document.getElementsByClassName("closem")[0];
 
 function showmodal() {
-  modal.style.display = "block";
+  modal.style.visibility = "visible";
+  modal.style.opacity = "1"
+
 }
 
 span.onclick = function() {
-  modal.style.display = "none";
+  modal.style.visibility = "hidden";
+  modal.style.opacity = "0"
 }
 
 window.onclick = function(event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    modal.style.visibility = "hidden";
+    modal.style.opacity = "0"
   }
 }
 

@@ -6,10 +6,10 @@ use App\Http\Controllers\registercontroller;
 use App\Http\Controllers\sessioncontroller;
 use App\Http\Controllers\uploadcontroller;
 use App\Http\Controllers\mainpagescontroller;
+use App\Http\Controllers\commentcontroller;
 use App\Models\cachepage;
 use App\Models\posts;
 use App\Livewire\Counter;
-use App\Http\Middleware\adminverify;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +40,14 @@ Route::post('/login', [sessioncontroller::class, 'login'])->middleware('guest');
 
 Route::get('/admin/upload', [uploadcontroller::class, 'uploadpg'])->middleware('notguest', 'admin');
 
-Route::post('/admin/upload', [uploadcontroller::class, 'upload'])->middleware('notguest', 'admin');Route::get('/admin/upload', [uploadcontroller::class, 'uploadpg'])->middleware('notguest', 'admin');
+Route::post('/admin/upload', [uploadcontroller::class, 'upload'])->middleware('notguest', 'admin');
 
 Route::post('/admin/delete', [uploadcontroller::class, 'delete'])->middleware('notguest', 'admin');
 
 Route::get('/admin/delete', [uploadcontroller::class, 'deletepg'])->middleware('notguest', 'admin');
+
+Route::post('/comment/post', [commentcontroller::class, 'postcomment'])->middleware('notguest');
+
+Route::post('/comment/delete', [commentcontroller::class, 'deletecomment'])->middleware('notguest');
+
 

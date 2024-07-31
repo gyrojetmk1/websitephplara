@@ -74,10 +74,86 @@
         <div class="footer">
             @yield("footer")
         </div>
+
+        @isset($comments)
+        <div id="comments" class="comments">
+
+
+            @if(empty($comments))
+                <h1>No comments :(</h1>
+                @auth
+                    <hr>
+                @endauth
+            @else
+                <h1>Comments</h1>
+                <hr>
+            @endif
+            
+            <link rel="stylesheet" href="/css/commentstyle.css">
+            
+
+            @auth
+            <form action="/comment/post" method="POST">
+                @csrf
+                <h2 for="contentup" id='sillyh2'>Comment</h2>
+
+                <input type="hidden" name="postid" value="{{$id}}"/>
+                <textarea type="text" placeholder="Enter comment here" name="comment" id="contentup" required></textarea>
+
+                <button type="submit" class="postcmtbtn"><b>Post</b></button>
+            </form>
+            <hr>
+            @endauth
+            
+            
+            
+
+            @foreach (array_reverse($comments) as $comment)
+
+
+                
+
+
+
+                <div class="comment">
+
+                    <div class="actions">
+
+                        <h2>{{$comment->username}}</h2>
+
+                        @auth
+
+                            @if (auth()->user()->admin or auth()->user()->id == $comment->userid)
+
+                                <h2 style="margin: 10px auto auto 4px"> | </h2>
+                                <form action="/comment/delete" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="cmtid" value="{{$comment->id}}"/>
+                                    <button type="submit" name="delete" id="delete">Delete</button>
+                                </form>
+
+                            @else
+                                    {{-- Do nothing --}}
+                            @endif
+
+                        @endauth
+                            
+                    </div>
+
+                    <p>{{$comment->comment}}</p>
+    
+                </div>
+                
+                
+                
+            @endforeach
+
+        </div>
+        @endisset
     </div>
 
 
-    <div id="modal" class="modal" style="display: none;">
+    <div id="modal" class="modal">
         <div class="modalcontainer">
 
             <div class="modalh">

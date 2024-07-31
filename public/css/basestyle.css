@@ -77,6 +77,7 @@ html,body {
     border-width: px;
     border-color: #9f7fcc;
     display: inline-block;
+    text-align: right;
 }
 
 .header a:hover {
@@ -111,9 +112,13 @@ html,body {
     overflow: hidden;
     color: #e6def2;
     width: 70%;
+    z-index: 2;
     min-height: 900px;
     border-radius: 10px;
+
 }
+
+
 
 .footer {
     text-align: center;
